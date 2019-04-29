@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess number using JQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="myDiv"></div>
+	<button>Click here</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function(event) {
+			/* Act on the event */
+			var num = prompt("Enter a random number:");
+			if(num == 5)
+				$("#myDiv").html("Right On");
+			//alert("Right On");
+			else
+				$("#myDiv").html("Unlucky :(");
+			//alert("Unlucky :(");
+		});
+		
+	});
+</script>

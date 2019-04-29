@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array of Digits JQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<p id="paraSampleText">Paragraph:</p>
+	<button id="btnClk">Click here!</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btnClk').click(function(event) {
+			/* Act on the event */
+			$('#paraSampleText').append("We are inside the para");
+		});
+		
+	});
+</script>

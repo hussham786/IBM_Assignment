@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting Started with Jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	
+	<div>This is the first div</div>
+	<div class="secDiv">This is the second div</div>
+	<div id="thirdDiv">This is the third div</div>
+
+	<button>First button!</button>
+	<button>Second button!</button>
+	<button>Third button!</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	//It is called implicitly whenever the doc finished loading
+	$(document).ready(function(){
+		//alert("Jquery world here");
+		$('div').css('background-color', 'green');
+		$('div.secDiv').css('background-color', 'azure');
+		$('div#thirdDiv').css('background-color', 'yellow');
+
+		
+
+		$("button").dblclick(function() {
+			/* Act on the event */
+			//var str = prompt("Enter a text:");
+			$(this).height(45);
+			//$(this).show(3000);
+		});
+
+		/*$("button").mouseover(function() {
+			
+			$(this).hide(3000);
+		});
+
+		$("button").mouseout(function() {
+			
+			$(this).show(3000);
+		});*/
+	});
+
+
+
+	/*$(function(){
+		alert("")
+	})*/
+</script>

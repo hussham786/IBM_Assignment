@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bold word JQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>first div</div>
+	<div>second div</div>
+	<div>third div</div>
+	<div>fourth div</div>
+
+	<button id="btnClk">Click here!</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btnClk').click(function(event) {
+			/* Act on the event */
+			//console.log(($('div:nth-child(1)').slice(' ')[1]));
+			//console.log($('div').text().split(' ')[0]);
+			$('div').each(function(index, el) {
+				
+			});
+		});
+		
+	});
+</script>
