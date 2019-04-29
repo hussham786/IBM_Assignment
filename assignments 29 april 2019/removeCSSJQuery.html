@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Removing CSS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div style="font-size: 40px; background-color: yellow">This is a div with css</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('div').click(function(event) {
+			/* Act on the event */
+			$('div').css('background-color', 'white');
+			$('div').css('font-size', '28px');
+			$('div').html('This is a div without css');
+		});
+	});
+</script>
