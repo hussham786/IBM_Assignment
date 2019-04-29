@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Not repeating character</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var str = prompt("Enter a String:");
+
+	var counter = 1;
+	//var repeatChar = str.split('')[0];
+	//console.log(str.length);
+	var repeatChar = ''; 
+	for (var i = 0; i < str.split('').length; i++) {
+		repeatChar = str.split('')[i];
+		for (var j = 0; j < str.split('').length; j++) {
+		
+		if(repeatChar == str.split('')[j])
+			counter++;
+
+		
+	}
+
+	console.log(counter);
+	if(counter < 3)
+			document.write(repeatChar +"&nbsp;");
+			//console.log("Non Repeat "+counter);
+			counter = 1;
+	}
+	
+</script>

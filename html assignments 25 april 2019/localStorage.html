@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Storage Application</title>
+</head>
+<body>
+	<button onclick="localSave()">Click Here to see</button>
+	<div id="container"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+	var counter = 0;
+	function localSave(){
+		counter++;
+		//localStorage.setItem('clicked',counter);
+		document.getElementById('container').innerHTML = "The button was clicked: "+localStorage.getItem('clicked')+" times";
+
+	}
+</script>

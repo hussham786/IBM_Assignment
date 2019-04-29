@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checking Case of an index of String</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var str = prompt("Enter a string:");
+	var index = prompt("Enter the index to check:");
+
+	
+		var splitStr = str.split('')[index];
+		//console.log(splitStr);
+		if(!isNaN(splitStr * 1)){
+			document.write("Character is numeric!");
+		} else {
+			if (splitStr == splitStr.toUpperCase()) {
+            document.write('Character is in upper case');
+        }
+        if (splitStr == splitStr.toLowerCase()){
+            document.write('Character is in lower case');
+        }
+		}
+	
+</script>

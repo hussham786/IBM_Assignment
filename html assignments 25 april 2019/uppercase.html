@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upper Case</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	//Getting string from user
+	var str = prompt("Enter a string:");
+	//counting the number of words
+	var countStr = str.replace(/(^\s*)|(\s*$)/gi,"");
+	countStr = str.replace(/[ ]{2,}/gi," ");
+	countStr = str.replace(/\n /,"\n");
+	var arr = [];
+	//console.log(countStr.split(' ').length);
+	for (var i = 0; i < countStr.split(' ').length; i++) {
+		arr[i] = countStr.split(' ')[i];
+		var upperCase = arr[i];
+		//Making the first letter in Capital
+		upperCase = upperCase.split('')[0].toUpperCase() + upperCase.substring(1);
+		//var upperCaseWord = upperCase.split('')[0].toUpperCase();
+		//var concatStr = upperCaseWord + upperCase.split('')[];
+		//console.log(upperCase);
+		//console.log(arr[i]);
+		document.write(upperCase+"&nbsp;");
+	}
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Longest String</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var str = prompt("Enter a String:");
+
+	/*var countStr = str.replace(/(^\s*)|(\s*$)/gi,"");
+	countStr = str.replace(/[ ]{2,}/gi," ");
+	countStr = str.replace(/\n /,"\n");
+	var arr = [];*/
+	var splitStr = str.split(' ');
+	var word = splitStr[0];
+	//var longStr = '';
+	//var anothStr = '';
+	for (var i = 0; i < splitStr.length; i++) {
+		//arr[i] = countStr.split(' ')[i];
+		
+		/*var concatStr = '';
+		concatStr =  arr[i] +","+ concatStr;
+		anothStr = concatStr + anothStr;*/
+		if(word.length < splitStr[i].length){
+			word = splitStr[i];
+		}
+		//console.log(concatStr);
+
+	}
+	document.write("The longest word is:"+word);
+	//console.log(word);
+</script>

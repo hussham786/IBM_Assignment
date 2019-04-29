@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Removing Duplicate array elements</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var range1 = prompt("Enter the range of first array:");
+	var range2 = prompt("Enter the range of second array:");
+
+	var arr1 = [];
+	var arr2 = [];
+	var splitArr1 = '';
+	var splitArr2 = '';
+	var concateStr = '';
+	for (var i = 0; i < range1; i++) {
+		arr1[i] = prompt("Enter the values of first array:");
+		splitArr1 = arr1[i] + "," + splitArr1;
+	}
+	console.log(splitArr1);
+
+	for (var j = 0; j < range2; j++) {
+		arr1[j] = prompt("Enter the values of second array:");
+		splitArr2 = arr1[j] + "," + splitArr2;
+	}
+	console.log(splitArr2);
+
+	for(var k = 0; k < range1; k++){
+		for(var l = 0; l < range2; l++){
+		if(splitArr1.split(",")[k] == splitArr2.split(",")[l]){
+			//splitArr1.splice("l--",1)
+			var duplicateStr = splitArr1.split(",")[k];
+			//console.log("Duplicate "+splitArr1.split(",")[k]);
+			splitArr1 = splitArr1.replace(duplicateStr+",","");
+			concateStr = splitArr1.concat(splitArr2);
+			//console.log("Duplicate");
+		} /*else {
+			concateStr = splitArr1.concat(splitArr2);
+		}*/
+	}
+	}
+
+	console.log(concateStr);
+	document.write("The required array is: "+concateStr);
+		//var splitArr1 = arr1[i];
+		/*for (var j = 0; j <= range2.length; j++) {
+			arr2[j] = prompt("Enter the values of second array:");
+			//var splitArr2 = arr2[j];
+			if (arr1[i] == arr2[j]) {
+				console.log("Duplicate numbers"+arr[i]+"&nbsp;");
+			} else {
+				console.log("Not Duplicate");
+			}
+		}*/
+
+	
+</script>

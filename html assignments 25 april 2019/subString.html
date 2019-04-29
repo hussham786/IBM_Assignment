@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Finding Substring</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var str = prompt("Enter a String:");
+
+	var splitStr = str.split(' ');
+
+	var subStr = prompt("Enter a Sub String:");
+
+	var matchWord = subStr;
+	var counter = 0;
+	for (var i = 0; i <= splitStr.length; i++) {
+		
+		if(matchWord == splitStr[i]){
+			matchWord = splitStr[i];
+			counter++;
+		}
+	}
+	document.write("The occurence of "+matchWord+" is "+counter +" times");
+</script>

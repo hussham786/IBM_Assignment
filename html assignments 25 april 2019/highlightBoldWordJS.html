@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Highlighting the bold words of a para</title>
+</head>
+<body>
+	<p id="para">Click the button to display the highlight the <b id="strBold">bold word</b> of the paragraph.</p>
+	<button onclick="strHighlight()">Highlight the bold part</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	function strHighlight(){
+	//var tagStr = document.getElementsByTagName("B");
+	document.getElementById("strBold").style.fontSize = "28px";
+	document.getElementById("strBold").style.transition = "1s all ease";
+}
+</script>

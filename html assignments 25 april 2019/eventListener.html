@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slider using JS</title>
+
+	
+</head>
+<body>
+	<button id="buttonClick">Click to change</button>
+	<button id="buttonToggle" onclick="toggle()">Toggle</button>
+
+
+	<!-- <div id="container" style="margin-top: 20px;">
+		
+	</div> -->
+	<div id="container">
+		
+	</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	document.getElementById('container').style.fontSize = "28px";
+	document.getElementById('container').style.backgroundColor  = "azure";
+	document.getElementById('buttonClick').addEventListener('click', function(){
+
+		//document.getElementByClassName('containerClass').toggle();
+		if (document.getElementById('container').style.marginTop == "20px") {
+			document.getElementById('container').style.marginTop = "300px";
+			//document.getElementById('buttonClick').style.transition = "1s all ease";
+			document.getElementById('container').innerHTML = "This is a container after click!";
+			
+		} else {
+			//document.getElementById('buttonClick').style.transition = "1s all ease";
+			document.getElementById('container').style.marginTop = "20px";
+			document.getElementById('container').innerHTML = "This is a container after click!";
+				
+		}
+		
+		/*var newPara = document.createElement("P");
+		newPara.class = "backContainerClass";
+		newPara.innerHTML = "This is a container after click!";*/
+		/*if (document.getElementById('container').style.marginTop == "20px") {
+			document.getElementById('container').innerHTML = "This is a container after click!";
+			document.getElementById('container').classList.toggle('backContainerClass');
+		}*/ /*else {
+			//document.getElementById('container').style.marginTop = "20px";
+			document.getElementById('container').classList.toggle('containerClass');
+		}*/
+
+
+		
+	});
+	/*document.getElementById('buttonClick').addEventListener('mouseout', function(){
+		document.getElementById('container').innerHTML = "This is a container!";
+		document.getElementById('container').style.marginBottom = "300px";
+		document.getElementById('container').style.transition = "1s all ease";
+	});*/
+
+	function toggle(){
+		document.getElementById('container').innerHTML = "This is a container after click!";
+		var newPara = document.createElement("P");
+		newPara.class = "backContainerClass";
+		newPara.innerHTML = "This is a container after click!";
+		document.getElementById('container').classList.toggle('backContainerClass');
+	}
+
+</script>
+
+<style type="text/css">
+	#container{
+		transition: 1s all ease;
+	}
+	.backContainerClass{
+		margin-top: 300px;
+		transition: 1s all ease;
+	}
+	/*#buttonClick{
+		transition: 1s all ease;
+	}*/
+</style>
+

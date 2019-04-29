@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Application of JS</title>
+</head>
+<body>
+	<button onclick="guessNumber()">Guess Number</button>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	function guessNumber(){
+		//Getting a number from user
+		var num = prompt("Guess a number:",0);
+		//Declaring the lucky number as 5
+		if(parseInt(num) == 5){
+			alert("Right On");
+		} else {
+			alert("Unlucky :(");
+		}
+	}
+
+</script>

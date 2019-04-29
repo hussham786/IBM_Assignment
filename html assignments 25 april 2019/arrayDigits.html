@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array of Digits</title>
+</head>
+<body>
+	<button onclick="arrOfDigits()">Array Digit</button>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	function arrOfDigits(){
+		//Getting a number from user
+		var num = prompt("Enter a number:");
+		var arr = [];
+		console.log(num.length);
+		//Splitting the digits
+		for (var i = 0; i < num.length; i++) {
+			var splitNum = num.split("")[i];
+			arr[i] = splitNum;
+			document.write(arr[i]+"<br>");
+			
+		}
+
+
+		
+		
+	}
+
+</script>
