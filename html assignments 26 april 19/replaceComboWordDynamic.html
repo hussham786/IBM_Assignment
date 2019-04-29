@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Replacing Word of Combo Dynamically</title>
+</head>
+<body>
+	<button onclick="changeWord()">Click to change</button>
+	<select id="comboId">
+	  <option value="volvo">Volvo</option>
+	  <option value="saab">Saab</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="audi">Audi</option>
+	</select>
+</body>
+</html>
+
+<script type="text/javascript">
+	function changeWord(){
+	var str = prompt("Enter the string:");
+	var option = document.createElement("option");
+	option.text = str;
+	document.getElementById('comboId').add(option,str);
+	//document.getElementById('referee_new').value = document.getElementById('other_referee').value;
+
+	document.getElementById('comboId').value = str;
+}
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Replacing body with new data</title>
+</head>
+<body>
+	<div id="container">
+		This is a paragraph before replacing with JS! 
+	</div>
+	<button onclick="changeFunc()">Change text with JS</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	function changeFunc(){
+	var str = prompt("Enter a sentence:");
+	document.getElementById('container').innerHTML = str;
+}
+</script>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generating Last Modified Date</title>
+</head>
+<body>
+	<div id="container"></div>
+	<button onclick="docModify()">Last Modified</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	function docModify(){
+		var modifyDoc = document.lastModified;
+  		document.getElementById("container").innerHTML = modifyDoc;
+	}
+</script>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic text boxes</title>
+</head>
+<body>
+	<div id="container"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+	var num = prompt("Enter the number of text boxes to be displayed:");
+
+	for (var i = 0; i < num; i++) {
+		var input = document.createElement('input'); 
+		input.type = "text";
+		input.placeholder = "text field"; 
+		container.appendChild(input); 
+	}
+</script>
