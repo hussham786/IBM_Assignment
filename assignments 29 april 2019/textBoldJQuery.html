@@ -20,7 +20,10 @@
 			/* Act on the event */
 			//console.log(($('div:nth-child(1)').slice(' ')[1]));
 			//console.log($('div').text().split(' ')[0]);
-			$('div').each(function(index, el) {
+			
+			$('div').each(function(index) {
+				var boldWord = $(this).html().split(' ')[1];
+				$(this).html($(this).text().replace(boldWord, '<b>' + boldWord + '</b>'));
 				
 			});
 		});
