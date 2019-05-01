@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Column of table</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<table style="width:100%" id="myTable">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>94</td>
+  </tr>
+</table>
+<br>
+<div id="myDiv"></div>
+<br>
+<button>Click here</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(event) {
+			$('#myDiv').html($('#myTable tr td:nth-child(1)').text());
+		});
+	});
+</script>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
