@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delay execution of animation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="myDiv" style="background-color: yellow; font-size: 40px; border: 1px solid #000; height: 100px; width: 300px; margin-left: 550px; margin-top: 200px; position: absolute; left: 0px; ">Manupulate the div</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#myDiv').click(function(event) {
+			/* Act on the event */
+			$("#myDiv").delay(2000).animate({height: '400px'}, 'slow');
+			//$("#myDiv").animate({opacity: '0.8'}, 'slow');
+			$("#myDiv").delay(2000).animate({width: '600px'}, 'slow');
+			$("#myDiv").delay(2000).animate({height: '100px'}, 'slow');
+			//$("#myDiv").animate({opacity: '1'}, 'slow');
+			$("#myDiv").delay(2000).animate({width: '300px'}, 'slow');
+			//$("#myDiv").delay(2000).animate({color: 'red'}, 'slow');
+		});
+	});
+</script>

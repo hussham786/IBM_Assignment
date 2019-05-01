@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Highlight Disable elements</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	
+		<input type="text" name="firstInput"><br>
+		<input type="text" name="secondInput" disabled><br>
+		<input type="text" name="thirdInput" disabled><br>
+		<button>Click to highlight disabled input</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(event) {
+			$('input:disabled').css("border-color", "red");
+		});
+	});
+</script>

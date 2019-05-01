@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moving elements between div</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="firstDiv">This is the first div</div>
+	<div id="secondDiv">This is the second div</div>
+	<button>Click here to replace the text</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(event) {
+			/* Act on the event */
+			var firstTxt = $('#firstDiv').html();
+			$('#firstDiv').replaceWith($('#secondDiv').html());
+			$('#secondDiv').html(firstTxt);
+		});
+	});
+</script>

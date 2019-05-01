@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Focus</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<form>
+		<input type="text" name="firstInput"><br>
+		<input type="text" name="secondInput"><br>
+		<input type="text" name="thirdInput"><br>
+		<button>Submit</button>
+	</form>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('input:first').focus();
+	});
+</script>

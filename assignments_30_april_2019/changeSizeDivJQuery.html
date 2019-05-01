@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animate div box</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="myDiv" style="background-color: yellow; font-size: 40px; border: 1px solid #000; height: 100px; width: 300px; margin-left: 550px; margin-top: 200px; position: absolute; left: 0px; ">Manuplate the div</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		/*$('div').click(function(event) {
+			
+			$("div").animate({height: '200px', width: '300px'}, 2000);
+		});*/
+
+		/*$('#myDiv').mousedown(function(event) {
+			$('#myDiv').contextmenu(function() {
+  				//alert("Right click");
+  				$('#myDiv').click(function(event) {
+					$("#myDiv").animate({height: '200px', width: '300px'}, 2000);
+				});
+			});
+         
+		});*/
+
+		document.oncontextmenu = function() {return false;};
+
+  		$(document).mousedown(function(e){ 
+		    if( e.button == 2 ) { 
+		      //alert('Right mouse button!'); 
+		      $("#myDiv").animate({height: '200px', width: '500px'}, 2000);
+		      $("#myDiv").animate({height: '100px', width: '300px'}, 2000);
+		      return false; 
+		    } 
+		    return true; 
+		  }); 
+	});
+</script>

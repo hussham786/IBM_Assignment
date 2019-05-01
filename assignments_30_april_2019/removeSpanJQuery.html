@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Removing all spans</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<span>This is first span</span><br>
+		<span>This is second span</span><br>
+		<span>This is third span</span><br>
+		<span>This is fourth span</span><br>
+	</div>
+	<button>Click here to remove</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(event) {
+			/* Act on the event */
+			$('span').remove();
+		});
+	});
+</script>

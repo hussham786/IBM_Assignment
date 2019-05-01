@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validating a text box using JQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<textarea type="text" name="txtName" id="txtValId"></textarea><br>
+	<span></span>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#txtValId').keyup(function(event) {
+			/* Act on the event */
+			//var counter = 1;
+			//console.log(alphaLen);
+			if(this.value.length < 20){
+				$('span').html('Total ' + (20 - this.value.length) + ' characters remaining');
+				//counter++;
+			} else {
+				alert('You have exceeded 20 characters limit');
+				//$('#txtValId').remove();
+				$('#txtValId').focus();
+			}
+		});
+		
+	});
+</script>
