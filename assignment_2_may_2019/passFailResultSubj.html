@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Report Card of 3 subjects</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<button>Click Here to Generate result</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(event) {
+			var subj1 = prompt('Enter the marks of first subject:');
+			var subj2 = prompt('Enter the marks of second subject:');
+			var subj3 = prompt('Enter the marks of third subject:');
+
+			var sum = parseInt(subj1) + parseInt(subj2) + parseInt(subj3);
+
+			if(parseInt(subj1) >= 40 && parseInt(subj2) >= 40 && parseInt(subj3) >= 40 && sum >= 125){
+				alert("Pass");
+			} else {
+				alert("Fail");
+			}
+		});
+	});
+</script>
