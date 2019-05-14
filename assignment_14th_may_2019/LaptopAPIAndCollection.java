@@ -51,7 +51,6 @@ class Laptop{
  
 class LaptopCollectionAndOperationUsingJava{
     static Scanner sc;
-    //private int idVal = 542;
     public static void main(String[] args) {
  
         ArrayList list = new ArrayList();
@@ -68,13 +67,7 @@ class LaptopCollectionAndOperationUsingJava{
         list.add(new Laptop(541, 8, 500, "IBM"));
  
         list.add(l);
- 
-//Get all the details of a particular laptop
-/*System.out.println("Second Laptop Details : ");
- 
-System.out.println("Ram : " + ((Laptop)list.get(1)).getRamSize());
-System.out.println("HDD Size : " + ((Laptop)list.get(1)).getHddSize());
-System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
+        
         LaptopCollectionAndOperationUsingJava.sc = new Scanner(System.in);
         System.out.println("Enter your choice\nEnter 1 to add new laptop\nEnter 2 to view all laptops\nEnter 3 to search for a laptop\nEnter 4 to update laptop details\nEnter 5 to delete laptop details");
         int choice = sc.nextInt();
