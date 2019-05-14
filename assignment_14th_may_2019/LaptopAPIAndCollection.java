@@ -79,6 +79,7 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         System.out.println("Enter your choice\nEnter 1 to add new laptop\nEnter 2 to view all laptops\nEnter 3 to search for a laptop\nEnter 4 to update laptop details\nEnter 5 to delete laptop details");
         int choice = sc.nextInt();
         sc.nextLine();
+        //Calling selectedChoice() method from main() and passing list
         new LaptopCollectionAndOperationUsingJava().selectedChoice(choice, list);
  
     }
@@ -105,11 +106,11 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
                 System.out.println("Enter your choice\nEnter 1 to add new laptop\nEnter 2 to view all laptops\nEnter 3 to search for a laptop\nEnter 4 to update laptop details\nEnter 5 to delete laptop details");
                 choice = sc.nextInt();
             }
-        }while(str.equalsIgnoreCase("Y"));
+        }while(str.equalsIgnoreCase("Y"));//Using do while loop for the continous execution of the switch case
     }
 
     void addLaptop(ArrayList list){
-       // Scanner sc = new Scanner(System.in);
+        //Taking inputs from the user at runtime
         System.out.println("Enter ID");
         int id = sc.nextInt();
         System.out.println("Enter ram size");
@@ -119,18 +120,15 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         sc.nextLine();
         System.out.println("Enter brand name");
         String brand = sc.nextLine();
-        //ArrayList list = new ArrayList();
+        //adding a new element/row in the existing list
         list.add(new Laptop(id, ram, hdd, brand));
-        //return list;
-        /*for (Object obj : list) {
-            System.out.print("ID " +((Laptop)obj).getId() +"  Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
-        }*/
 
     }
 
     void viewLaptop(ArrayList list){
 
         for (Object obj : list) {
+            //Showing the list and also casting Object to Laptop object
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
         }
     }
@@ -157,15 +155,9 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         int id = sc.nextInt();
         System.out.println("Enter your choice\nEnter 1 to update brand\nEnter 2 to update ram size\nEnter 3 to update hard disk size\nEnter 4 to update all");
         int choice = sc.nextInt();
-
-        /*System.out.println("Enter the updated brand");
-        String brand = sc.nextLine();
-        System.out.println("Enter the updated ram size");
-        int ram = sc.nextInt();
-        System.out.println("Enter the updated hard disk size");
-        int hdd = sc.nextInt();*/
         int index = 0;
         for (Object obj : list) {
+            //Finding index in terms of id
             if(((Laptop)obj).getId() == id){
                index = list.indexOf(obj);
                break;
@@ -185,11 +177,6 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
             default: System.out.println("WRONG INPUT!");
         }
 
-        //list.get(index).getBrand()
-
-
-        //list.set(index);
-
     }
 
     void deleteLaptop(ArrayList list){
@@ -197,11 +184,13 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         int id = sc.nextInt();
         int index = 0;
         for (Object obj : list) {
+            //Finding index in terms of id
             if(((Laptop)obj).getId() == id){
                index = list.indexOf(obj);
                break;
         }
     }
+    //Removing the element at the given index
     list.remove(index);
 }
 
@@ -210,6 +199,7 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         System.out.println("Enter brand name");
         String brand = sc.nextLine();
         for (Object obj : list) {
+            //Searching in terms of brand
             if(((Laptop)obj).getBrand().equalsIgnoreCase(brand)){
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
         }
@@ -221,6 +211,7 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         System.out.println("Enter ram size");
         int ram = sc.nextInt();
         for (Object obj : list) {
+            //Searching in terms of ram size
             if(((Laptop)obj).getRamSize() == ram){
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
         }
@@ -232,6 +223,7 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
         System.out.println("Enter Hard disk size");
         int hdd = sc.nextInt();
         for (Object obj : list) {
+            //Searching in terms of Hard Disk size
             if(((Laptop)obj).getHddSize() == hdd){
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
         }
@@ -241,8 +233,10 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
     void updateByBrand(int id, int index, ArrayList list){
         System.out.println("Enter the updated brand");
         String brand = sc.next();
+        //Getting elements at that particular index
         int ram = ((Laptop)list.get(index)).getRamSize();
         int hdd = ((Laptop)list.get(index)).getHddSize();
+        //Updating the values of the particular index
         list.set(index, new Laptop(id, ram, hdd, brand));
 
     }
@@ -250,16 +244,20 @@ System.out.println("Brand : " + ((Laptop)list.get(1)).getBrand());*/
     void updateByRam(int id, int index, ArrayList list){
         System.out.println("Enter the updated ram size");
         int ram = sc.nextInt();
+        //Getting elements at that particular index
         String brand = ((Laptop)list.get(index)).getBrand();
         int hdd = ((Laptop)list.get(index)).getHddSize();
+        //Updating the values of the particular index
         list.set(index, new Laptop(id, ram, hdd, brand));
     }
 
     void updateByHDD(int id, int index, ArrayList list){
         System.out.println("Enter the updated hard disk size");
         int hdd = sc.nextInt();
+        //Getting elements at that particular index
         String brand = ((Laptop)list.get(index)).getBrand();
         int ram = ((Laptop)list.get(index)).getRamSize();
+        //Updating the values of the particular index
         list.set(index, new Laptop(id, ram, hdd, brand));
     }
 
