@@ -113,8 +113,23 @@ class LaptopCollectionAndOperationUsingJava{
         sc.nextLine();
         System.out.println("Enter brand name");
         String brand = sc.nextLine();
-        //adding a new element/row in the existing list
-        list.add(new Laptop(id, ram, hdd, brand));
+        
+        
+        int idVal = 1;
+        for (Object obj : list) {
+            //Checking for valid id
+            if(((Laptop)obj).getId() == id){
+                idVal = 0;
+                break;
+            }
+        }
+        if (idVal == 1) {
+            //adding a new element/row in the existing list
+            list.add(new Laptop(id, ram, hdd, brand));
+            System.out.println("Element added successfully!");
+        } else {
+            System.out.println("Entered id already exist!");
+        }
 
     }
 
@@ -144,20 +159,24 @@ class LaptopCollectionAndOperationUsingJava{
     }
 
     void updateLaptop(ArrayList list){
-        System.out.println("Enter the laptop id to update");
         int id = sc.nextInt();
-        System.out.println("Enter your choice\nEnter 1 to update brand\nEnter 2 to update ram size\nEnter 3 to update hard disk size\nEnter 4 to update all");
-        int choice = sc.nextInt();
+        int idVal = 1;
+        
         int index = 0;
         for (Object obj : list) {
-            //Finding index in terms of id
+            //Checking for valid id
             if(((Laptop)obj).getId() == id){
+                idVal = 0;
+                //Finding index in terms of obj
                index = list.indexOf(obj);
                break;
             }
         }
 
-
+        if (idVal == 0) {
+        System.out.println("Enter your choice\nEnter 1 to update brand\nEnter 2 to update ram size\nEnter 3 to update hard disk size\nEnter 4 to update all");
+        int choice = sc.nextInt();
+            
         switch(choice){
             case 1: updateByBrand(id, index, list);
                 break;
@@ -169,6 +188,9 @@ class LaptopCollectionAndOperationUsingJava{
                 break;
             default: System.out.println("WRONG INPUT!");
         }
+    } else {
+        System.out.println("Entered id does not exist!");
+    }
 
     }
 
@@ -176,15 +198,21 @@ class LaptopCollectionAndOperationUsingJava{
         System.out.println("Enter the laptop id to delete");
         int id = sc.nextInt();
         int index = 0;
+        int idVal = 1;
         for (Object obj : list) {
-            //Finding index in terms of id
             if(((Laptop)obj).getId() == id){
+                idVal = 0;
                index = list.indexOf(obj);
                break;
         }
     }
-    //Removing the element at the given index
-    list.remove(index);
+    if (idVal == 0) {
+        //Removing a row/element from list
+        list.remove(index);
+        System.out.println("Element deleted successfully!");
+    } else {
+        System.out.println("Entered id does not exist!");
+    }
 }
 
     void searchByBrand(ArrayList list){
@@ -195,6 +223,9 @@ class LaptopCollectionAndOperationUsingJava{
             //Searching in terms of brand
             if(((Laptop)obj).getBrand().equalsIgnoreCase(brand)){
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
+        } else {
+            System.out.println("No such brand exists!");
+            break;
         }
     }
 }
@@ -207,6 +238,9 @@ class LaptopCollectionAndOperationUsingJava{
             //Searching in terms of ram size
             if(((Laptop)obj).getRamSize() == ram){
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
+        } else {
+            System.out.println("No such Ram size exists!");
+            break;
         }
     }
 }
@@ -219,6 +253,9 @@ class LaptopCollectionAndOperationUsingJava{
             //Searching in terms of Hard Disk size
             if(((Laptop)obj).getHddSize() == hdd){
             System.out.print("ID " +((Laptop)obj).getId() +" Brand "+ ((Laptop)obj).getBrand() +" Ram " + ((Laptop)obj).getRamSize() +" gb " +" Hard Disk " +((Laptop)obj).getHddSize() +" gb\n");
+        } else {
+            System.out.println("No such Hard Disk size exists!");
+            break;
         }
     }
 }
@@ -231,6 +268,7 @@ class LaptopCollectionAndOperationUsingJava{
         int hdd = ((Laptop)list.get(index)).getHddSize();
         //Updating the values of the particular index
         list.set(index, new Laptop(id, ram, hdd, brand));
+        System.out.println("Brand updated successfully!");
 
     }
 
@@ -242,6 +280,7 @@ class LaptopCollectionAndOperationUsingJava{
         int hdd = ((Laptop)list.get(index)).getHddSize();
         //Updating the values of the particular index
         list.set(index, new Laptop(id, ram, hdd, brand));
+        System.out.println("Ram size updated successfully!");
     }
 
     void updateByHDD(int id, int index, ArrayList list){
@@ -252,6 +291,7 @@ class LaptopCollectionAndOperationUsingJava{
         int ram = ((Laptop)list.get(index)).getRamSize();
         //Updating the values of the particular index
         list.set(index, new Laptop(id, ram, hdd, brand));
+        System.out.println("Hard Disk size updated successfully!");
     }
 
     void updateAll(int id, int index, ArrayList list){
@@ -263,5 +303,6 @@ class LaptopCollectionAndOperationUsingJava{
         int hdd = sc.nextInt();
         
         list.set(index, new Laptop(id, ram, hdd, brand));
+        System.out.println("Element updated successfully!");
     }
 }
