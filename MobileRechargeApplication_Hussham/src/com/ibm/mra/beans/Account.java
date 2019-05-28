@@ -1,0 +1,35 @@
+package com.ibm.mra.beans;
+
+public class Account {
+	private String accountType, customerName;
+	private double accountBalance;
+	public Account(String accountType, String customerName, double accountBalance) {
+		this.accountType = accountType;
+		this.customerName = customerName;
+		this.accountBalance = accountBalance;
+	}
+	public String getAccountType() {
+		return accountType;
+	}
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public double getAccountBalance() {
+		return accountBalance;
+	}
+	public void setAccountBalance(double accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+	
+	@Override
+	public String toString() {
+		return "Hello " + customerName + ", Available Balance is " + accountBalance; 
+	}
+	
+}
